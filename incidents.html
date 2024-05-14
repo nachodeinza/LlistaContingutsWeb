@@ -12,7 +12,7 @@
 <body>
 
     <nav>
-        <a href="index.html"><img  height="50" width="50" class="logo" src="Imatges/logo.png.jpeg" alt="Logo"></a>
+        <a href="index.html"><img height="50" width="50" class="logo" src="Imatges/logo.png.jpeg" alt="Logo"></a>
         <a class="a" href="descripcio.html">Descripció i objectius del projecte</a>
         <a class="a" href="cronograma.html">Cronograma del projecte</a>
         <a class="a" href="disseny.html">Disseny de BD</a>
@@ -23,7 +23,47 @@
 
     <section id="incidents">
         <h1>Incidents i problemes</h1>
-        <!-- Contenido aquí -->
+        <h2>PROBLEMA REQUIRES</h2>
+        <center>
+            <img src="Imatges/Incident1.png" alt="Incident module-info.java">
+        </center>
+        <p style="text-align: center; border: solid black 1px;">Primer incident, no connectava la base de dades amb el
+            codi perque faltaven alguns "requires" en el module-info.java de l'aplicació
+            <br>
+            <br>
+            En el meu cas faltava el <strong>"requires java.sql"</strong>
+        </p>
+
+        <h2>PROBLEMA POM.XML</h2>
+        <center>
+            <img src="Imatges/Incident2.png" alt="Incident pom.xml">
+        </center>
+        <p style="text-align: center; border: solid black 1px;">Tenia un problema amb el pom.xml amb la versió del
+            maven, quan creaves el projecte per defecte t'assignava el 11. I en el meu cas utilitzo el 18.
+            <br>
+            <br>
+            La solució era canviar la linea:
+            <strong><br>maven.compiler.source 18 maven.compiler.source
+                <br>maven.compiler.target 18 maven.compiler.target</strong>
+
+        </p>
+
+        <h2>PROBLEMA ID_GENERE</h2>
+
+        <center>
+            <img src="Imatges/Incident3.png" alt="Incident setString">
+            <p style="text-align: center; border: solid black 1px;">
+                El problema era que aquesta linea de codi -> " ordre3.setString(1, nom_genere); " la situava en una
+                linea que no era la correcta. Primerament la vaig escriure abans del try i sempre em donava error,
+                nom_genere is null o m'agafava sempre el primer genere, no el seleccionat. I vais canviar la linea a com
+                esta a la fotografia i va funcionar tot bé.
+                <br>
+                <br>
+                Tamb'vaig tindre un problema de que no m'executava la comanda i era perque m'havia deixat el "ResultSet
+                resultSet3 = ordre3.executeQuery();"
+            </p>
+
+        </center>
     </section>
 
 </body>
